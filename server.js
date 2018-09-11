@@ -16,9 +16,14 @@ app.use(bodyParser.json());
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routing/apiRoutes")(app);
-require("./routing/htmlRoutes")(app);
+// require("./routing/apiRoutes")(app);
+// require("./routing/htmlRoutes")(app);
 
+var apiRoutes = require("./app/routing/apiRoutes")
+app.use(apiRoutes)
+
+var htmlRoutes = require("./app/routing/htmlRoutes")
+app.use(htmlRoutes)
 
 
 // =============================================================================
